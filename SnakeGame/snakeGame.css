@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family:'VT323' , monospace ;
+}
+body,
+.snake{
+    /* background-color: #414141; */
+    background-color: #fffff0; /* Ivory color */
+    background-color: #e8f5f2; /* Pale mint green */
+    background-color: #e0e5d6; /* Soft sage green */
+    background-color: #f5f5e5; /* Light cream color */
+    background-color: #f7f4e9; /* Light sand color */
+    background-color: #f5f5e5; /*  */
+}
+#game-board{
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin: 5px;
+}
+
+.game-border-1 {
+    border: #a2a87f solid 10px; /* Lighter border color */
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 10px #a2a87f; /* Lighter shadow color */
+}
+
+.game-border-2 {
+    border: #c0d4a5 solid 8px; /* Lighter border color */
+    border-radius: 26px;
+    box-shadow: inset 0 0 0 10px #c0d4a5; /* Lighter shadow color */
+}
+
+.game-border-3 {
+    border: #a5b097 solid 30px; /* Lighter border color */
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 5px #a5b097; /* Lighter shadow color */
+}
+
+#instruction-text{
+    position: absolute;
+    top: 60%;
+    color: #131212;
+    width: 300px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
+    margin: 0;
+}
+.scores{
+    display: flex;
+    justify-content: space-between;
+}
+#score{
+    color: #4caf50;
+}
+#score,
+#highScore{
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+#highScore{
+    color: #ff5722;
+    display: none;
+}
+.game-border-3{
+    background-color: #c4cfa3;
+}
+.snake{
+    border: #e91e63 1px dotted;
+}
+.food{
+    background-color: #dedede; 
+    border: #4caf50 5px solid;
+}
+#logo{
+    position: absolute;
+}

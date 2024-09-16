@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Basic reset and scaling for the whole container */
+.whole-container {
+  scale: 0.9;
+}
+
+/* Styling for the logo */
+#logo {
+  font: 1.35em sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-left: 20px;
+}
+
+/* Styling for the navigation bar */
+#nav-bar {
+  background-color: #8b966c;
+  padding: 10px;
+  color: whitesmoke;
+  font-size: 20px;
+  z-index: 99;
+  position: relative; /* Required for positioning dropdown menu */
+}
+
+#nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-bar li {
+  position: relative; /* For dropdown positioning */
+}
+
+#nav-bar a {
+  color: whitesmoke; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+#nav-bar a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for the menu button */
+#menu-button {
+  display: none; /* Hidden by default */
+  cursor: pointer; /* Pointer cursor for the button */
+}
+
+#menu-button i {
+  font-size: 24px; /* Adjust icon size */
+}
+
+/* Dropdown menu styling */
+#dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position relative to the menu button */
+  top: 100%; /* Place below the nav items */
+  left: 0;
+  background-color: #8b966c;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+#dropdown-menu a {
+  display: block;
+  padding: 10px 20px; /* Padding for dropdown items */
+  color: whitesmoke; /* Link color */
+}
+
+#dropdown-menu a:hover {
+  background-color: #6a7b5b; /* Background color on hover */
+}
+
+/* Ensure the container and boxes are sized correctly */
+.background {
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar if present */
+  width: 98vw; /* Set container width to 100% of viewport width */
+  height: auto; /* Set container height */
+  display: flex; /* Align children horizontally */
+  white-space: nowrap; /* Prevent line breaks in the container */
+  box-sizing: border-box; /* Include padding and border in width */
+  padding: 10px; /* Space around the container's content */
+  position: relative; /* For positioning the pseudo-element */
+}
+
+/* Hide scrollbar for Firefox */
+.scrollable-element {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #333 #f0f0f0; /* Dark handle and light track for Firefox */
+}
+
+/* Style for the vertical scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Reduced width for the scrollbar */
+}
+
+/* Track (part of the scrollbar not covered by the thumb) */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light background for the scrollbar track */
+  border-radius: 10px; /* Optional: rounded corners for the track */
+}
+
+/* Handle (part of the scrollbar that is dragged) */
+::-webkit-scrollbar-thumb {
+  background: #333; /* Dark color for the scrollbar handle */
+  border-radius: 10px; /* Optional: rounded corners for the handle */
+}
+
+/* Optional: Hover effect for the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Slightly lighter dark color on hover */
+}
+
+/* Wrapper to ensure items stay in a row */
+.background-wrapper {
+  display: flex; /* Align children horizontally */
+  gap: 40px; /* Space between each .boxContent */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  align-items: stretch; /* Align items to fill container height */
+  height: 100%; /* Ensure wrapper takes full height */
+}
+
+/* Style for each box content */
+.boxContent {
+  width: 430px; /* Set width of each boxContent */
+  height: 320px; /* Set height of each boxContent */
+  box-sizing: border-box; /* Include padding and border in width/height */
+  transition: transform 0.3s ease-in-out; /* Smooth scale transition */
+  display: flex; /* Align items inside boxContent */
+  flex-direction: column; /* Stack image and title vertically */
+  justify-content: center; /* Center content vertically */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Scale effect on hover */
+.boxContent:hover {
+  transform: scale(1.15); /* Scale up the boxContent */
+}
+
+/* Style for images inside .box-1 */
+.box-1 img {
+  width: 98%; /* Make images responsive to the container's width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  border: 2px dashed #ccc; /* Example border style */
+}
+
+/* Title font styling */
+.titleFont {
+  text-align: center;
+  margin-top: 10px; /* Space between image and title */
+}
+
+/* Optional: styling for the add-more box */
+#add-more {
+  background-color: #f0f0f0; /* Example background color */
+  border: 2px dashed #ccc; /* Example border style */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Example icon size */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  height: 240px;
+}
+
+#add-more i {
+  color: #333; /* Icon color */
+}
+
+/* Optional: add hover effect for links */
+.titleFont a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Example link color */
+}
+
+.titleFont a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.loader {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 999;
+  color: white;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader h1 {
+  margin-top: -12%;
+  font-size: 6.5vw;
+  font-weight: 600;
+  color: #c4cfa3;
+  opacity: 0.8;
+  position: absolute;
+}
+
+.loader h2 {
+  z-index: 20;
+  font-size: 5vw;
+  font-family: "VT323", monospace;
+  font-weight: 600;
+  color: transparent;
+  background: linear-gradient(to top, #8b966c, #595f43);
+  -webkit-background-clip: text;
+  position: absolute;
+  opacity: 0;
+  animation: load 1s linear 1s;
+}
+
+.loader h2 i {
+  padding-left: 10px;
+}
+
+.loader h2:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.loader h2:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.loader h2:nth-child(4) {
+  animation-delay: 4s;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#content {
+  height: 25.4vh;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  font-family: monospace;
+  position: relative; /* Ensure proper positioning */
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  #logo {
+    font-size: 35px;
+  }
+  #nav-bar {
+    font-size: 25px; /* Adjust font size for medium screens */
+  }
+
+  #nav-bar ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Align items to the start */
+  }
+
+  #nav-bar li {
+    margin: 5px 0; /* Adjust margin for stacked items */
+  }
+
+  .background {
+    height: 300px; /* Adjust container height */
+  }
+
+  .background-wrapper {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+  .boxContent {
+    width: 350px; /* Adjust width for smaller screens */
+    height: 250px; /* Adjust height for smaller screens */
+  }
+
+  #add-more {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #logo {
+    font-size: 28px;
+  }
+  #nav-bar {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .background {
+    height: auto; /* Allow auto height adjustment */
+  }
+
+  .boxContent {
+    width: 90%; /* Use a percentage width for better responsiveness */
+    height: auto; /* Adjust height automatically */
+  }
+
+  #add-more {
+    font-size: 18px; /* Further adjust font size */
+    height: 150px; /* Further adjust height */
+  }
+}
