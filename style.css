@@ -32,7 +32,7 @@
 #nav-bar ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
@@ -70,7 +70,7 @@
   left: 0;
   background-color: #8b966c;
   width: 100%;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #dropdown-menu a {
@@ -147,7 +147,7 @@
 
 /* Scale effect on hover */
 .boxContent:hover {
-  transform: scale(1.15); /* Scale up the boxContent */
+  transform: scale(1.15); 
 }
 
 /* Style for images inside .box-1 */
@@ -268,7 +268,7 @@ footer {
   padding: 5px;
   font-size: 16px;
   font-family: monospace;
-  position: relative; /* Ensure proper positioning */
+  position: relative;
   bottom: 0;
   width: 100%;
 }
@@ -278,6 +278,7 @@ footer {
   #logo {
     font-size: 35px;
   }
+
   #nav-bar {
     font-size: 25px; /* Adjust font size for medium screens */
   }
@@ -292,7 +293,10 @@ footer {
   }
 
   .background {
-    height: 300px; /* Adjust container height */
+    height: 110vh; /* Adjust container height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .background-wrapper {
@@ -312,15 +316,14 @@ footer {
 }
 
 @media (max-width: 768px) {
-  #logo {
-    font-size: 28px;
-  }
+
   #nav-bar {
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
 
   .background {
     height: auto; /* Allow auto height adjustment */
+    margin: 0 auto;
   }
 
   .boxContent {
