@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(80deg, #000000, #ff0000, #000000);
+}
+
 /* Basic reset and scaling for the whole container */
 .whole-container {
   scale: 0.9;
@@ -13,20 +17,39 @@
 
 /* Styling for the logo */
 #logo {
-  font: 1.35em sans-serif;
+  font: 1.5em sans-serif;
   color: white;
   text-shadow: 2px 2px 4px #000000;
   margin-left: 20px;
+  display: inline-block; 
+  vertical-align: middle; 
 }
 
 /* Styling for the navigation bar */
 #nav-bar {
-  background-color: #8b966c;
-  padding: 10px;
-  color: whitesmoke;
-  font-size: 20px;
-  z-index: 99;
-  position: relative; /* Required for positioning dropdown menu */
+  background-color: #000000; 
+  color: #ffffff; 
+  padding: 18px; 
+  font-size: 21px;
+  position: sticky; /* Stick to the top of the viewport */
+  top: 0; /* Stick to the top */
+  width: 100%; /* Full width */
+  filter: drop-shadow(0px 2px 3px rgba(255, 255, 255, 0.3)); /* Light drop shadow */
+  z-index: 99; /* Ensure it's above other content */
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Distribute space between items */
+}
+
+/* Optional: Additional styling for navigation links */
+#nav-bar a {
+  color: #ffffff; /* White links */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Space between links */
+}
+
+#nav-bar a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
 
 #nav-bar ul {
@@ -34,22 +57,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 #nav-bar li {
   position: relative; /* For dropdown positioning */
-}
-
-#nav-bar a {
-  color: whitesmoke; /* Link color */
-  text-decoration: none; /* Remove underline */
-}
-
-#nav-bar a:hover {
-  text-decoration: underline; /* Underline on hover */
 }
 
 /* Style for the menu button */
@@ -109,13 +124,13 @@
 
 /* Track (part of the scrollbar not covered by the thumb) */
 ::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Light background for the scrollbar track */
+  background: orangered; /* Light background for the scrollbar track */
   border-radius: 10px; /* Optional: rounded corners for the track */
 }
 
 /* Handle (part of the scrollbar that is dragged) */
 ::-webkit-scrollbar-thumb {
-  background: #333; /* Dark color for the scrollbar handle */
+  background: #f0f0f0; /* Dark color for the scrollbar handle */
   border-radius: 10px; /* Optional: rounded corners for the handle */
 }
 
@@ -147,7 +162,7 @@
 
 /* Scale effect on hover */
 .boxContent:hover {
-  transform: scale(1.15); 
+  transform: scale(1.15);
 }
 
 /* Style for images inside .box-1 */
@@ -155,7 +170,7 @@
   width: 98%; /* Make images responsive to the container's width */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
-  border: 2px dashed #ccc; /* Example border style */
+  border: 2px dashed white; /* Example border style */
 }
 
 /* Title font styling */
@@ -184,10 +199,48 @@
 .titleFont a {
   text-decoration: none; /* Remove underline */
   color: #007bff; /* Example link color */
+  font-size: 25px;
 }
 
 .titleFont a:hover {
   text-decoration: underline; /* Underline on hover */
+}
+
+/* Styling for the popup message */
+.popup-message {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px whitesmoke;
+  font-size: 16px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Green light progress indicator */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #444;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.progress-bar .fill {
+  height: 100%;
+  background-color: #00ff00; /* Green color */
+  width: 100%; /* Start full width */
+  transition: width 10s linear;
 }
 
 .loader {
@@ -275,12 +328,11 @@ footer {
 
 /* Responsive design for smaller screens */
 @media (max-width: 1024px) {
-
   .loader h1 {
     margin-top: -16%;
     font-size: 7vw;
   }
-  
+
   .loader h2 {
     font-size: 6.5vw;
   }
@@ -319,7 +371,7 @@ footer {
     height: 250px; /* Adjust height for smaller screens */
   }
 
-  .titleFont{
+  .titleFont {
     font-size: 30px;
   }
 
@@ -328,19 +380,21 @@ footer {
     height: 200px; /* Adjust height for smaller screens */
   }
 
-  #content{
-    height: 10vh;
+  .popup-message {
+    top: 140px;
   }
 
+  #content {
+    height: 10vh;
+  }
 }
 
 @media (max-width: 768px) {
-
   .loader h1 {
     margin-top: -12%;
     font-size: 7vw;
   }
-  
+
   .loader h2 {
     font-size: 6vw;
   }
@@ -355,7 +409,7 @@ footer {
     margin-left: 15px;
   }
 
-  .titleFont{
+  .titleFont {
     font-size: 25px;
   }
 
@@ -364,13 +418,20 @@ footer {
     height: auto; /* Adjust height automatically */
   }
 
+  .boxContent:hover {
+    transform: scale(1);
+  }
+
   #add-more {
     font-size: 25px; /* Further adjust font size */
     height: 160px; /* Further adjust height */
   }
 
-  #content{
+  .popup-message {
+    top: 140px;
+  }
+
+  #content {
     height: 15vh;
   }
-  
 }
