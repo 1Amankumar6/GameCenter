@@ -275,6 +275,16 @@ footer {
 
 /* Responsive design for smaller screens */
 @media (max-width: 1024px) {
+
+  .loader h1 {
+    margin-top: -16%;
+    font-size: 7vw;
+  }
+  
+  .loader h2 {
+    font-size: 6.5vw;
+  }
+
   #logo {
     font-size: 35px;
   }
@@ -309,13 +319,31 @@ footer {
     height: 250px; /* Adjust height for smaller screens */
   }
 
+  .titleFont{
+    font-size: 30px;
+  }
+
   #add-more {
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 30px; /* Adjust font size for smaller screens */
     height: 200px; /* Adjust height for smaller screens */
   }
+
+  #content{
+    height: 10vh;
+  }
+
 }
 
 @media (max-width: 768px) {
+
+  .loader h1 {
+    margin-top: -12%;
+    font-size: 7vw;
+  }
+  
+  .loader h2 {
+    font-size: 6vw;
+  }
 
   #nav-bar {
     font-size: 22px; /* Adjust font size for smaller screens */
@@ -324,6 +352,11 @@ footer {
   .background {
     height: auto; /* Allow auto height adjustment */
     margin: 0 auto;
+    margin-left: 15px;
+  }
+
+  .titleFont{
+    font-size: 25px;
   }
 
   .boxContent {
@@ -332,7 +365,12 @@ footer {
   }
 
   #add-more {
-    font-size: 18px; /* Further adjust font size */
-    height: 150px; /* Further adjust height */
+    font-size: 25px; /* Further adjust font size */
+    height: 160px; /* Further adjust height */
   }
+
+  #content{
+    height: 15vh;
+  }
+  
 }
